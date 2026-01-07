@@ -2,21 +2,14 @@ AWS GenAI Developer – Professional certification exam is intended for individu
 
 The exam validates a candidate's ability to complete the following tasks:
 
-1. Design and implement solutions by using vector stores, Retrieval Augmented Generation (RAG), knowledge bases, and other GenAI architectures.
-
-2. Integrate FMs into applications and business workflows.
-
-3. Apply prompt engineering and management techniques.
-
-4. Implement agentic AI solutions.
-
-5. Optimize GenAI applications for cost, performance, and business value.
-
-6. Implement security, governance, and Responsible AI practices.
-
-7. Troubleshoot, monitor, and optimize GenAI applications.
-
-8. Evaluate FMs for quality and responsibility.
+* Design and implement solutions by using vector stores, Retrieval Augmented Generation (RAG), knowledge bases, and other GenAI architectures.
+* Integrate FMs into applications and business workflows.
+* Apply prompt engineering and management techniques.
+* Implement agentic AI solutions.
+* Optimize GenAI applications for cost, performance, and business value.
+* Implement security, governance, and Responsible AI practices.
+* Troubleshoot, monitor, and optimize GenAI applications.
+* Evaluate FMs for quality and responsibility.
 
 
 The exam has the following content domains and weightings:
