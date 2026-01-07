@@ -1,0 +1,19 @@
+Claimant Name: John Doe
+Phone Number: +1 626-732-4545
+Email: johndoe@example.com
+Policy Number: US-PL-784213-09 
+License Plate: URBNKIZ
+Incident Date: 2025-12-20
+Claim Amount: $4,850.00
+Incident Description: Rear-end collision at an intersection in Marysville, OH during light snow. Vehicle (2019 Toyota Camry) sustained bumper and tailgate damage. No injuries reported; police report filed.
+
+Policy Coverage Details:
+- Coverage Type: Personal Auto Policy (PAP)
+- Liability Bodily Injury: $100,000 per person / $300,000 per accident
+- Liability Property Damage: $100,000 per accident
+- Collision: Deductible: $500
+- Comprehensive: Deductible: $250
+- Uninsured/Underinsured Motorist: $100,000 per person / $300,000 per accident
+- Medical Payments: $5,000
+- Rental Reimbursement: $40 per day (max 30 days)
+- Roadside Assistance: Included
