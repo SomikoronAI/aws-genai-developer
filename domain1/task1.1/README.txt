@@ -5,7 +5,6 @@ Bonus Assignment : Build a proof-of-concept document processing solution that ex
 Scenario : An insurance company wants to automate processing of claim documents to reduce manual effort and improve consistency.
 
 Step 1. Design the architecture (Skill 1.1.1)
-
 Create a simple architecture diagram showing the following:
 Document storage (Amazon S3)
 Processing workflow
@@ -18,9 +17,7 @@ Summary generation
 
 
 Step 2. Implement proof-of-Concept (Skill 1.1.2)
-
 Set up AWS environment:
-
 Create a S3 bucket
 You can use Python SDK to create a S3 bucket.
 You can also use AWS CLI to create a bucket. For example : aws s3 mb s3://claim-documents-poc-nururrahman
@@ -33,7 +30,6 @@ Claim summary generation
 
 
 Step 3. Create reusable components (Skill 1.1.3)
-
 Develop standardized for the following:
 Prompt template manager
 Model invoker
@@ -41,7 +37,6 @@ Basic content validator
 
 
 Step 4. Test and evaluate
-
 Test with 2-3 sample documents
 Compare performance of different models
 Document findings and recommendations
@@ -61,7 +56,6 @@ Code organization and reusability
 
 
 Extra challenging steps:
-
 Add a simple web interface using Flask
 Implement a knowledge base with insurance policy information
 Add content filtering for sensitive information
