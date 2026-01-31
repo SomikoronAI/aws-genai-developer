@@ -2,7 +2,7 @@
 
 
 $REGION_NAME="us-east-1"
-$ACCOUNT_ID="339713184295"
+$ACCOUNT_ID="XXXX1318XXXX"
 $REST_API_ID="fjwtozxruk" 
 $STAGE="prod"
 
@@ -82,3 +82,4 @@ aws apigateway create-deployment --rest-api-id $REST_API_ID --stage-name $STAGE
 "prompt": "what is a 401(k) plan?", 
 "use_case": "financial services"
 }
+
