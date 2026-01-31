@@ -1,0 +1,144 @@
+{
+  "use_cases": {
+    "finance": {
+      "primary_model": "us.amazon.nova-micro-v1:0",
+      "fallback_models": [
+        "us.amazon.nova-2-lite-v1:0",
+        "us.amazon.nova-pro-v1:0",
+        "meta.llama3-8b-instruct-v1:0",
+        "mistral.mistral-small-2402-v1:0",
+        "us.anthropic.claude-3-sonnet-20240229-v1:0",
+        "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
+        "us.anthropic.claude-sonnet-4-20250514-v1:0"
+      ],
+      "model_scores": [
+        {
+          "model_id": "us.amazon.nova-micro-v1:0",
+          "latency": 1.8149415850639343,
+          "similarity_score": 0.5218566770980976,
+          "latency_score": 0.7130507974200582,
+          "overall_score": 0.5792149131946858
+        },
+        {
+          "model_id": "us.amazon.nova-2-lite-v1:0",
+          "latency": 3.13862943649292,
+          "similarity_score": 0.47088215686660256,
+          "latency_score": 0.5037706880445689,
+          "overall_score": 0.4807487162199925
+        },
+        {
+          "model_id": "us.amazon.nova-pro-v1:0",
+          "latency": 3.609652727842331,
+          "similarity_score": 0.4905223861288002,
+          "latency_score": 0.4293001051004176,
+          "overall_score": 0.47215570182028543
+        },
+        {
+          "model_id": "meta.llama3-8b-instruct-v1:0",
+          "latency": 3.7033794621626535,
+          "similarity_score": 0.452636529443291,
+          "latency_score": 0.4144815501149738,
+          "overall_score": 0.44119003564479586
+        },
+        {
+          "model_id": "mistral.mistral-small-2402-v1:0",
+          "latency": 4.094836284716924,
+          "similarity_score": 0.41524460545341446,
+          "latency_score": 0.35259073004625585,
+          "overall_score": 0.39644844283126685
+        },
+        {
+          "model_id": "us.anthropic.claude-3-sonnet-20240229-v1:0",
+          "latency": 5.532849719127019,
+          "similarity_score": 0.4801870889569848,
+          "latency_score": 0.12523530896878654,
+          "overall_score": 0.3737015549605253
+        },
+        {
+          "model_id": "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
+          "latency": 4.867035835981369,
+          "similarity_score": 0.4335578641893305,
+          "latency_score": 0.23050302910236242,
+          "overall_score": 0.37264141366324005
+        },
+        {
+          "model_id": "us.anthropic.claude-sonnet-4-20250514-v1:0",
+          "latency": 6.324957758188248,
+          "similarity_score": 0.43647995097083475,
+          "latency_score": 0.0,
+          "overall_score": 0.3055359656795843
+        }
+      ]
+    },
+    "general": {
+      "primary_model": "us.amazon.nova-micro-v1:0",
+      "fallback_models": [
+        "meta.llama3-8b-instruct-v1:0",
+        "us.amazon.nova-pro-v1:0",
+        "us.amazon.nova-2-lite-v1:0",
+        "mistral.mistral-small-2402-v1:0",
+        "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
+        "us.anthropic.claude-3-sonnet-20240229-v1:0",
+        "us.anthropic.claude-sonnet-4-20250514-v1:0"
+      ],
+      "model_scores": [
+        {
+          "model_id": "us.amazon.nova-micro-v1:0",
+          "latency": 1.4714529514312744,
+          "similarity_score": 0.6589019801148284,
+          "latency_score": 0.717989361803685,
+          "overall_score": 0.6766281946214854
+        },
+        {
+          "model_id": "meta.llama3-8b-instruct-v1:0",
+          "latency": 2.256275396347046,
+          "similarity_score": 0.6109808913308913,
+          "latency_score": 0.5675745773240289,
+          "overall_score": 0.5979589971288326
+        },
+        {
+          "model_id": "us.amazon.nova-pro-v1:0",
+          "latency": 2.8648434352874754,
+          "similarity_score": 0.6432835087684933,
+          "latency_score": 0.450939749903598,
+          "overall_score": 0.5855803811090247
+        },
+        {
+          "model_id": "us.amazon.nova-2-lite-v1:0",
+          "latency": 3.354785556793213,
+          "similarity_score": 0.6626316739160393,
+          "latency_score": 0.35704011809362857,
+          "overall_score": 0.570954207169316
+        },
+        {
+          "model_id": "mistral.mistral-small-2402-v1:0",
+          "latency": 2.8338697814941405,
+          "similarity_score": 0.5903945474374267,
+          "latency_score": 0.4568759912662822,
+          "overall_score": 0.5503389805860833
+        },
+        {
+          "model_id": "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
+          "latency": 4.18488037109375,
+          "similarity_score": 0.6357470099388056,
+          "latency_score": 0.19794867849534403,
+          "overall_score": 0.5044075105057672
+        },
+        {
+          "model_id": "us.anthropic.claude-3-sonnet-20240229-v1:0",
+          "latency": 4.835288972854614,
+          "similarity_score": 0.68415575269244,
+          "latency_score": 0.07329491726394322,
+          "overall_score": 0.5008975020638909
+        },
+        {
+          "model_id": "us.anthropic.claude-sonnet-4-20250514-v1:0",
+          "latency": 5.217721433639526,
+          "similarity_score": 0.6213060338354456,
+          "latency_score": 0.0,
+          "overall_score": 0.43491422368481186
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+# Assignment Part 2
+# Create appconfig application for region 1 
+# Create appconfig application for region 2 
+
+
+Windows PS> $region_name="us-east-1"
+Windows PS> $region_name="us-west-2"
+
+
+$app_name="AIAssistantApp"
+
+
+# Create application
+aws appconfig create-application --name $app_name --region $region_name
+
+
+$app_id="4vse40a"
+$app_id="tppst11"
+
+
+# Create environment
+aws appconfig create-environment --application-id $app_id --name "prod" --region $region_name
+
+
+$env_id="qwru197"
+$env_id="gkx1h2r"
+
+
+# Create configuration profile
+aws appconfig create-configuration-profile --application-id $app_id `
+--name "ModelSelectionStrategy" `
+--location-uri "hosted" `
+--type "AWS.Freeform"
+--region $region_name
+
+
+$config_profile_id="9bkoqc3"
+$config_profile_id="w5qvfg4"
+
+
+# Create configuration version
+Windows PS> $base64Content=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes((Get-Content -Raw "./data/fm_selection_strategy.json")))
+
+aws appconfig create-hosted-configuration-version --application-id $app_id `
+--configuration-profile-id $config_profile_id `
+--content-type "application/json" `
+--content $base64Content `
+--region $region_name `
+appconfig_version_output_file
+
+
+# Deploy configuration
+aws appconfig start-deployment --application-id $app_id `
+--environment-id $env_id `
+--configuration-profile-id $config_profile_id `
+--configuration-version 1 `
+--deployment-strategy-id "AppConfig.Linear50PercentEvery30Seconds" `
+--region $region_name

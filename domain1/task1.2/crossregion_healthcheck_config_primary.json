@@ -1,0 +1,8 @@
+{
+  "Type": "HTTPS",
+  "Port": 443,
+  "FullyQualifiedDomainName": "3wsoykiyw8.execute-api.us-east-1.amazonaws.com",
+  "ResourcePath": "/prod/health",
+  "RequestInterval": 30,
+  "FailureThreshold": 3
+}

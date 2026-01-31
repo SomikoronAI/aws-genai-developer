@@ -1,0 +1,226 @@
+# Assigment Part 3
+#
+# CloudFormation template for AI Assistant API
+# 
+# This template automates the deployment of key components of the AI Assistant system, 
+# including:
+# - API Gateway for client-facing endpoints
+# - Permissions for invoking the existing Model Abstraction Lambda
+# - Integration with an existing Step Functions workflow for /workflow
+#
+# Purpose:
+# - This template is designed to **recreate the infrastructure** that has been built manually
+#   in steps (Part 1: Model setup, Part 2: Dynamic model selection, Part 3: Resilient system design).
+# - It ensures that the environment can be **consistently redeployed** in any AWS region 
+#   without manual intervention.
+#
+# Notes:
+# - The template assumes that the Lambda function, Step Function state machine, and 
+#   API Gateway execution role already exist. Their ARNs are passed as parameters.
+# - The /generate endpoint invokes the Lambda function via proxy integration.
+# - The /workflow endpoint invokes the Express Step Function synchronously.
+# - CloudFormation handles resource creation, method definitions, and permissions automatically.
+#
+# Usage:
+# - Update the parameter values (Lambda ARN, Step Function ARN, API Gateway role ARN) if needed.
+# - Deploy using `aws cloudformation deploy` to recreate or update the AI Assistant API infrastructure.
+
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AI Assistant Cross-Region Deployment'
+
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues:
+      - dev
+      - prod
+    Description: Deployment environment
+
+  ModelAbstractionLambda:
+    Type: String
+    Description: ARN of the existing Model Abstraction Lambda
+    
+  StateMachineArn:
+    Type: String
+    Description: ARN of the existing Step Function workflow for /workflow
+
+  ApiGatewayRoleArn:
+    Type: String
+    Description: ARN of the existing IAM role API Gateway can assume to start Step Function
+
+
+
+Resources:
+  # -----------------------------
+  # API Gateway
+  # -----------------------------
+  ApiGateway:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: !Sub "AIAssistantAPI-${Environment}"
+      Description: API for AI Assistant
+      EndpointConfiguration:
+        Types:
+          - REGIONAL    # EDGE | REGIONAL | PRIVATE
+  
+  GenerateResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ParentId: !GetAtt ApiGateway.RootResourceId
+      PathPart: "generate"
+
+  WorkflowResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ParentId: !GetAtt ApiGateway.RootResourceId
+      PathPart: "workflow"
+
+  HealthResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ParentId: !GetAtt ApiGateway.RootResourceId
+      PathPart: health
+
+  # -----------------------------
+  # API Gateway Methods
+  # -----------------------------
+  GenerateMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ResourceId: !Ref GenerateResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ModelAbstractionLambda}/invocations"
+
+  WorkflowMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ResourceId: !Ref WorkflowResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+
+      # -----------------------------
+      # Integration with Step Function (Express)
+      # -----------------------------
+      Integration:
+        Type: AWS
+        IntegrationHttpMethod: POST
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:states:action/StartSyncExecution"
+        Credentials: !Ref ApiGatewayRoleArn
+        RequestTemplates:
+          application/json: !Sub |
+            {
+              "stateMachineArn": "${StateMachineArn}",
+              "input": "$util.escapeJavaScript($input.body)"
+            }
+
+        # -----------------------------
+        # Map Step Function responses to HTTP status codes
+        # -----------------------------
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+            ResponseTemplates:
+              application/json: "$input.body"
+
+          - StatusCode: 500
+            ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+            ResponseTemplates:
+              application/json: |
+                {"message":"Internal server error"}
+
+      # -----------------------------
+      # Define the HTTP status codes API Gateway returns to the client
+      # -----------------------------
+      MethodResponses:
+        - StatusCode: 200
+          ResponseModels:
+            application/json: Empty
+          ResponseParameters:
+            method.response.header.Content-Type: true
+
+        - StatusCode: 500
+          ResponseModels:
+            application/json: Empty
+          ResponseParameters:
+            method.response.header.Content-Type: true
+
+  HealthMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ResourceId: !Ref HealthResource
+      HttpMethod: GET
+      AuthorizationType: NONE
+      Integration:
+        Type: MOCK
+        RequestTemplates:
+          application/json: '{"statusCode": 200}'
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseTemplates:
+              application/json: '"ok"'
+      MethodResponses:
+        - StatusCode: 200
+          ResponseModels:
+            application/json: Empty
+
+
+  # -----------------------------
+  # Lambda permission for API Gateway
+  # -----------------------------
+  GenerateLambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref ModelAbstractionLambda
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/POST/generate"
+
+  # -----------------------------
+  # API Deployment
+  # -----------------------------
+  ApiDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn: 
+      - GenerateMethod
+      - WorkflowMethod
+      - HealthMethod
+    Properties:
+      RestApiId: !Ref ApiGateway
+      StageName: !Ref Environment
+
+
+Outputs:
+  ApiId:
+    Description: API Gateway ID
+    Value: !Ref ApiGateway
+  
+  LambdaArn:
+    Description: Lambda function ARN
+    Value: !Ref ModelAbstractionLambda
+    
+  GenerateEndpoint:
+    Description: API Gateway endpoint URL for Generate
+    Value: !Sub "https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/${Environment}/generate"
+
+  WorkflowEndpoint:
+    Description: API Gateway endpoint URL for workflow
+    Value: !Sub "https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/${Environment}/workflow"
+
+  HealthEndpoint:
+    Description: API Gateway endpoint URL for health
+    Value: !Sub "https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/${Environment}/health"

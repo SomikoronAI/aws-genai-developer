@@ -1,0 +1,118 @@
+# Assignment Part 2
+
+
+$REGION_NAME="us-east-1"
+$ACCOUNT_ID="339713184295"
+$STAGE="prod"
+
+
+# Create API
+aws apigateway create-rest-api --name "AIAssistantAPI"
+
+
+$REST_API_ID="fjwtozxruk"
+
+
+# Get root resource ID
+$PARENT_ID=(aws apigateway get-resources --rest-api-id $REST_API_ID --query "items[?path=='/'].id" --output text)
+echo $PARENT_ID
+
+
+# Create resource
+aws apigateway create-resource --rest-api-id $REST_API_ID --parent-id $PARENT_ID --path-part "generate"
+aws apigateway create-resource --rest-api-id $REST_API_ID --parent-id $PARENT_ID --path-part "direct"
+aws apigateway get-resources --rest-api-id $REST_API_ID --query "items[].{id:id, path:path}" --output table
+
+
+$RESOURCE_ID="su7s6q"
+
+
+# Create POST method
+aws apigateway put-method --rest-api-id $REST_API_ID --resource-id $RESOURCE_ID --http-method POST --authorization-type "NONE"
+
+
+# Create Lambda integration
+$LAMBDA_ARN="arn:aws:lambda:${REGION_NAME}:${ACCOUNT_ID}:function:AppConfigModelAbstraction"
+$LAMBDA_URI="arn:aws:apigateway:{REGION_NAME}:lambda:path/2015-03-31/functions/$LAMBDA_ARN/invocations"
+
+aws apigateway put-integration 
+--rest-api-id $REST_API_ID `
+--resource-id $RESOURCE_ID `
+--http-method POST `
+--type AWS_PROXY `
+--integration-http-method POST `
+--uri $LAMBDA_URI
+
+
+# Allow API to invoke Lambda
+aws lambda add-permission `
+--function-name AppConfigModelAbstraction `
+--statement-id apigateway-post `
+--action lambda:InvokeFunction `
+--principal apigateway.amazonaws.com `
+--source-arn arn:aws:execute-api:${REGION_NAME}:${ACCOUNT_ID}:gaydwj/*/POST/*
+
+
+# Deploy API
+aws apigateway create-deployment --rest-api-id $RESOURCE_ID --stage-name $STAGE
+
+
+
+# Validate API
+1. API Gateway Test Console: 
+{
+"prompt": "what are the benefits of 401(k) plans?", 
+"use_case": "Financial services"
+}
+
+
+
+2a. Curl from a Windows PS client 
+# Save the payload body as a json file, `payload_body.json`:
+{
+"prompt": "what is 401(k) plan?", 
+"use_case":"Financial services"
+}
+
+curl.exe -X POST https://fjwtozxruk.execute-api.us-east-1.amazonaws.com/prod/generate `
+-H "Content-Type: application/json" `
+-d '@payload_input.json'
+
+
+2b. Windows PS command from a Windows PS client 
+$payload = @{
+  prompt   = "what is 401(k) plan?"
+  use_case = "Financial services"
+} | ConvertTo-Json
+
+$response = Invoke-RestMethod `
+-Method Post `
+-Uri "https://fjwtozxruk.execute-api.us-east-1.amazonaws.com/prod/generate" `
+-ContentType "application/json" `
+-Body $payload
+
+# Inspect properties
+$response.model_used
+$response.response.success
+$response.response.output
+
+# Pretty print
+$response | ConvertTo-Json -Depth 5
+
+
+
+3. Curl from a Linux client 
+curl -X POST https://fjwtozxruk.execute-api.us-east-1.amazonaws.com/prod/generate \
+-H "Content-Type: application/json" \
+-H "Accept: application/json" \
+-d '{"prompt": "what is 401(k) plan?", "use_case":"Financial services"}'
+
+curl -X POST "https://fjwtozxruk.execute-api.us-east-1.amazonaws.com/prod/generate" \
+-H "Content-Type: application/json" \
+-H "Accept: application/json" \
+-d '{"prompt": "what is a disadvantage of 401(k) plan?", "use_case":"Financial services"}'
+
+
+
+
+

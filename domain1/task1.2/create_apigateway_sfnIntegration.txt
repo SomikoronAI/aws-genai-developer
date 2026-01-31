@@ -1,0 +1,84 @@
+# Assignment Part 2 & 3
+
+
+$REGION_NAME="us-east-1"
+$ACCOUNT_ID="339713184295"
+$REST_API_ID="fjwtozxruk" 
+$STAGE="prod"
+
+
+# Use Existing API
+API name: "AIAssistantAPI"
+
+
+# Get root resource ID
+$PARENT_ID=(aws apigateway get-resources --rest-api-id $REST_API_ID --query "items[?path=='/'].id" --output text)
+echo $PARENT_ID
+
+
+# Create resource
+aws apigateway create-resource --rest-api-id $REST_API_ID --parent-id $PARENT_ID --path-part "workflow"
+aws apigateway get-resources --rest-api-id $REST_API_ID --query "items[].{id:id, path:path}" --output table
+
+
+$RESOURCE_ID = "5t4fco"
+
+
+# Create POST method
+aws apigateway put-method --rest-api-id $REST_API_ID --resource-id $RESOURCE_ID --http-method POST --authorization-type "NONE"
+
+
+# Create Step Function integration
+$APIGTW_ROLE_ARN="arn:aws:iam::${ACCOUNT_ID}:role/aws-apigateway-execution-role"
+$STATE_URI="arn:aws:apigateway:${REGION_NAME}:states:action/StartSyncExecution"
+
+aws apigateway put-integration `
+--rest-api-id $REST_API_ID `
+--resource-id $RESOURCE_ID `
+--http-method POST `
+--type AWS `
+--integration-http-method POST `
+--uri $STATE_URI `
+--credentials $APIGTW_ROLE_ARN `
+--request-templates file://stepfunction_request.json `
+--passthrough-behavior NEVER
+
+
+# Create response mapping
+# 200 Method Response
+aws apigateway put-method-response `
+--rest-api-id $REST_API_ID `
+--resource-id $RESOURCE_ID `
+--http-method POST `
+--status-code 200 `
+--response-models file://apigw_200_method_response_models.json `
+--response-parameters file://apigw_200_method_response_parameters.json 
+
+
+# 200 Integration Response
+aws apigateway put-integration-response `
+--rest-api-id $REST_API_ID `
+--resource-id $RESOURCE_ID `
+--http-method POST `
+--status-code 200 `
+--response-templates file://apigw_200_integration_response_templates.json `
+--response-parameters file://apigw_200_integration_response_parameters.json
+
+
+# Check response 
+aws apigateway get-integration-response `
+--rest-api-id $REST_API_ID `
+--resource-id $RESOURCE_ID `
+--http-method POST --status-code 200
+
+
+# Deploy API
+aws apigateway create-deployment --rest-api-id $REST_API_ID --stage-name $STAGE
+
+
+
+# # Validate API
+{
+"prompt": "what is a 401(k) plan?", 
+"use_case": "financial services"
+}

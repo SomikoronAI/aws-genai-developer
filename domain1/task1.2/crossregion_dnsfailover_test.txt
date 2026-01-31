@@ -1,0 +1,38 @@
+# Assignment Part 3
+# CLI commands have been modified to run on Windows PS
+
+
+# 1. Get the health check ID
+$primaryHealthID = (aws route53 list-health-checks `
+--query "HealthChecks[?starts_with(CallerReference, 'primary-')].Id" `
+--output text)
+
+
+# 2. Get the health check Version  
+$currentVersion=(aws route53 get-health-check `
+--health-check-id $primaryHealthID `
+--query "HealthCheck.HealthCheckVersion" `
+--output text)
+
+
+# 3. Enable InvertHealthStatus
+aws route53 update-health-check `
+--health-check-id $primaryHealthID `
+--health-check-version $urrentVersion `
+--inverted
+
+
+# 4. Test 
+curl.exe -X POST https://ai-assistant.radaintly.com/generate `
+-H "Content-Type: application/json" `
+-d '@payload_input.json'
+
+
+# 5. Revert failover
+aws route53 update-health-check `
+--health-check-id $primaryHealthID `
+--no-invert
+
+aws route53 update-health-check `
+--health-check-id $secondaryHealthID `
+--no-invert

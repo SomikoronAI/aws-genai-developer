@@ -1,0 +1,19 @@
+{
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "ai-assistant.radaintly.com",
+        "Type": "A",
+        "SetIdentifier": "Secondary",
+        "Failover": "SECONDARY",
+        "AliasTarget": {
+          "HostedZoneId": "Z2FDTNDATAQYW2",
+          "DNSName": "dsrjyuqub1g8j.cloudfront.net",
+          "EvaluateTargetHealth": false
+        },
+        "HealthCheckId": "bd6d5480-9a07-4cd8-8462-1e0019158320"
+      }
+    }
+  ]
+}
