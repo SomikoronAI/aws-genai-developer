@@ -1,0 +1,24 @@
+# Create application
+aws appconfig create-application --name "AIAssistantApp"
+
+# Create environment
+aws appconfig create-environment --application-id YOUR_APP_ID --name "prod"
+
+# Create configuration profile
+aws appconfig create-configuration-profile --application-id YOUR_APP_ID `
+--name "ModelSelectionStrategy" `
+--location-uri "hosted" `
+--type "AWS.AppConfig.FeatureFlags"
+
+# Create and deploy configuration
+aws appconfig create-hosted-configuration-version --application-id YOUR_APP_ID `
+--configuration-profile-id YOUR_PROFILE_ID `
+--content-type "application/json" `
+--content file://model_selection_strategy.json
+
+# Deploy configuration
+aws appconfig start-deployment --application-id YOUR_APP_ID `
+--environment-id YOUR_ENV_ID `
+--configuration-profile-id YOUR_PROFILE_ID `
+--configuration-version 1 `
+--deployment-strategy-id YOUR_STRATEGY_ID

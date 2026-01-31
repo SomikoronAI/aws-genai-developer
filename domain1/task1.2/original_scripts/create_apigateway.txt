@@ -1,0 +1,22 @@
+# Create API
+aws apigateway create-rest-api --name "AIAssistantAPI"
+
+# Get root resource ID
+ROOT_ID=$(aws apigateway get-resources --rest-api-id YOUR_API_ID --query 'items[0].id' --output text)
+
+# Create resource
+aws apigateway create-resource --rest-api-id YOUR_API_ID --parent-id $ROOT_ID --path-part "generate"
+
+# Create POST method
+aws apigateway put-method --rest-api-id YOUR_API_ID --resource-id YOUR_RESOURCE_ID --http-method POST --authorization-type "NONE"
+
+# Set up Lambda integration
+aws apigateway put-integration --rest-api-id YOUR_API_ID `
+--resource-id YOUR_RESOURCE_ID `
+--http-method POST `
+--type AWS_PROXY `
+--integration-http-method POST `
+--uri "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/YOUR_LAMBDA_ARN/invocations"
+
+# Deploy API
+aws apigateway create-deployment --rest-api-id YOUR_API_ID --stage-name "prod"
