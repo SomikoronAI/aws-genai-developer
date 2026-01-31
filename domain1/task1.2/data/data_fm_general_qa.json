@@ -1,0 +1,153 @@
+[
+{
+"question": "Which five religions are most commonly labeled as 'world religions' in introductory religious studies?", 
+"context": "General purpose", 
+"ground_truth": "The 'Big Five' typically cited are Buddhism, Christianity, Hinduism, Islam, and Judaism."
+},
+{
+"question": "What weekly amount of physical activity should healthy adults aim for to gain substantial health benefits?",
+"context": "General purpose",
+"ground_truth": "Adults should do 150-300 minutes of moderate-intensity aerobic activity per week, or 75-150 minutes of vigorous-intensity aerobic activity (or an equivalent combination), plus muscle-strengthening activities on 2 or more days."
+},
+{
+"question": "Do randomized controlled trials show that yoga reduces perceived stress in university students?",
+"context": "General purpose",
+"ground_truth": "Yes. A 12-week randomized controlled trial found significant reductions in perceived stress and anxiety and improvements in wellbeing among students practicing yoga versus controls."
+},
+{
+"question": "In U.S. gardening, what does the USDA Plant Hardiness Zone Map represent, and how are zones defined?",
+"context": "General purpose",
+"ground_truth": "The USDA Plant Hardiness Zone Map divides regions by average annual extreme minimum winter temperature into 13 zones (each a 10°F band, with 'a' and 'b' half-zones). It guides coldtolerance for perennials and was most recently updated in 2023."
+},
+{
+"question": "What is the safe minimum internal temperature for cooking chicken, and why is it important?",
+"context": "General purpose",
+"ground_truth": "All poultry (including chicken) must reach an internal temperature of 165°F (73.9°C) to ensure pathogens are destroyed; measure with a food thermometer."
+},
+{
+"question": "In Ohio, who needs a fishing license to fish public waters, and are there age-based exemptions?",
+"context": "General purpose",
+"ground_truth": "A fishing license is required to take fish in Ohio waters; persons under 16 years of age are not required to purchase a fishing license. Anglers must have the license in possession when fishing."
+},
+{
+"question": "When did the transition from silent films to 'talkies' accelerate, and which film popularized synchronized dialogue?",
+"context": "General purpose",
+"ground_truth": "The transition accelerated in the late 1920s; 'The Jazz Singer' (1927) was the first feature-length film with synchronized dialogue and greatly popularized sound cinema."
+},
+{
+"question": "What did the U.S. Supreme Court decide in Miranda v. Arizona (1966) regarding custodial interrogations?",
+"context": "General purpose",
+"ground_truth": "Police must advise suspects in custody of their rights—including the right to remain silent, that statements can be used against them, the right to an attorney, and appointed counsel if needed—before interrogation; otherwise statements are inadmissible."
+},
+{
+"question": "Historians often summarize the causes of World War I with the acronym MAIN. What does MAIN stand for, and how did these factors contribute?",
+"context": "General purpose",
+"ground_truth": "MAIN stands for Militarism, Alliances, Imperialism, and Nationalism. These long-term forces—alongside the alliance system and rivalries—created a volatile environment that, after the 1914 assassination in Sarajevo, escalated into global war."
+},
+{
+"question": "For U.S. citizens, what identification is required for international air travel, and can digital IDs replace this?",
+"context": "General purpose",
+"ground_truth": "A physical, valid U.S. passport book is required for international air travel. Digital IDs may be accepted at select TSA checkpoints for domestic screening, but they are not valid for international travel; carry your physical passport."
+},
+{
+"question": "What is the central belief in Hinduism regarding dharma?",
+"context": "General purpose",
+"ground_truth": "Dharma in Hinduism refers to the moral order, duty, and righteousness that sustains the universe and guides individual conduct."
+},
+{
+"question": "What is the recommended daily water intake for an average adult according to health guidelines?",
+"context": "General purpose",
+"ground_truth": "Health authorities generally recommend about 3.7 liters per day for men and 2.7 liters per day for women from all beverages and foods combined."
+},
+{
+"question": "Which yoga pose is commonly recommended for improving spinal flexibility?",
+"context": "General purpose",
+"ground_truth": "The Cat-Cow pose (Marjaryasana-Bitilasana) is widely recommended for enhancing spinal flexibility and mobility."
+},
+{
+"question": "What is the best time of year to plant tomatoes in temperate climates?",
+"context": "General purpose",
+"ground_truth": "Tomatoes should be planted after the last frost in spring when soil temperatures are consistently above 60°F."
+},
+{
+"question": "Why is it important to let meat rest after cooking?",
+"context": "General purpose",
+"ground_truth": "Resting meat allows juices to redistribute throughout the meat, resulting in better flavor and tenderness."
+},
+{
+"question": "What type of bait is commonly used for catching largemouth bass?",
+"context": "General purpose",
+"ground_truth": "Plastic worms and crankbaits are popular choices for catching largemouth bass."
+},
+{
+"question": "Which film is considered the first feature-length animated movie?",
+"context": "General purpose",
+"ground_truth": "Snow White and the Seven Dwarfs (1937) is regarded as the first feature-length animated film."
+},
+{
+"question": "What is the primary purpose of the Fourth Amendment in U.S. law?",
+"context": "General purpose",
+"ground_truth": "The Fourth Amendment protects individuals against unreasonable searches and seizures by the government."
+},
+{
+"question": "What event marked the beginning of the Great Depression in the United States?",
+"context": "General purpose",
+"ground_truth": "The stock market crash of October 1929 is widely considered the start of the Great Depression."
+},
+{
+"question": "What is the Schengen Area in Europe known for?",
+"context": "General purpose",
+"ground_truth": "The Schengen Area allows passport-free travel between most European countries that are part of the agreement."
+},
+
+{
+"question": "What is the concept of karma in Buddhism?",
+"context": "General purpose",
+"ground_truth": "Karma in Buddhism refers to intentional actions that influence future experiences, emphasizing moral cause and effect."
+},
+{
+"question": "What is the recommended daily intake of dietary fiber for adults?",
+"context": "General purpose",
+"ground_truth": "Adults should consume about 25 to 38 grams of dietary fiber per day, depending on age and gender."
+},
+{
+"question": "Which yoga pose is commonly used for relaxation and stress relief?",
+"context": "General purpose",
+"ground_truth": "Child’s Pose (Balasana) is widely practiced for relaxation and stress relief."
+},
+{
+"question": "What is mulching in gardening and why is it beneficial?",
+"context": "General purpose",
+"ground_truth": "Mulching involves covering soil with organic or inorganic material to retain moisture, suppress weeds, and improve soil health."
+},
+{
+"question": "What is the difference between baking soda and baking powder in cooking?",
+"context": "General purpose",
+"ground_truth": "Baking soda is pure sodium bicarbonate, while baking powder contains sodium bicarbonate plus an acid; baking powder can leaven without additional acidic ingredients."
+},
+{
+"question": "What is the purpose of a fishing reel drag system?",
+"context": "General purpose",
+"ground_truth": "The drag system controls the resistance on the fishing line, allowing fish to pull line without breaking it."
+},
+{
+"question": "Which movie is credited with pioneering computer-generated imagery (CGI) in feature films?",
+"context": "General purpose",
+"ground_truth": "Jurassic Park (1993) is widely credited with revolutionizing CGI in feature films."
+},
+{
+"question": "What does the term 'precedent' mean in legal systems?",
+"context": "General purpose",
+"ground_truth": "Precedent refers to a legal decision that serves as an authoritative rule or example for future similar cases."
+},
+{
+"question": "What was the significance of the Magna Carta in history?",
+"context": "General purpose",
+"ground_truth": "The Magna Carta, signed in 1215, limited the power of the English monarchy and established principles of due process."
+},
+{
+"question": "What is the main advantage of using travel insurance for international trips?",
+"context": "General purpose",
+"ground_truth": "Travel insurance provides financial protection against unexpected events such as medical emergencies, trip cancellations, and lost luggage."
+}
+]
