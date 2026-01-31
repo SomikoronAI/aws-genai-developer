@@ -1,8 +1,9 @@
 # Assignment Part 2
+# CLI commands have been modified to run on Windows PS
 
 
 $REGION_NAME="us-east-1"
-$ACCOUNT_ID="339713184295"
+$ACCOUNT_ID="XXXX1318XXXX"
 $STAGE="prod"
 
 
@@ -111,6 +112,7 @@ curl -X POST "https://fjwtozxruk.execute-api.us-east-1.amazonaws.com/prod/genera
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{"prompt": "what is a disadvantage of 401(k) plan?", "use_case":"Financial services"}'
+
 
 
 
