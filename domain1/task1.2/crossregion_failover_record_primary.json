@@ -12,7 +12,7 @@
           "DNSName": "dsrjyuqub1g8j.cloudfront.net",
           "EvaluateTargetHealth": false
         },
-        "HealthCheckId": "418c0ad4-46bc-438b-b8ba-77934c54c415"
+        "HealthCheckId": "418c0ad4-46bc-438b-b8ba-77934cxxxxxx"
       }
     }
   ]
