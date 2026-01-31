@@ -1,0 +1,18 @@
+{
+	"billingDetails":
+	{
+	"billedDurationInMilliseconds":8200,
+	"billedMemoryUsedInMB":64
+	},
+	"executionArn":"arn:aws:states:us-east-1:339713184295:express:AIAssistantCircuitBreaker:d36aeec0-c69c-4bd8-ab74-152386e01135:9ebec795-81c1-434a-b1f2-bb3f9ab89616",
+	"input":"{\"prompt\": \"what is 401(k) plan?\", \"use_case\":\"Financial services\"}",
+	"inputDetails":{"__type":"com.amazonaws.swf.base.model#CloudWatchEventsExecutionDataDetails","included":true},
+	"name":"d36aeec0-c69c-4bd8-ab74-152386e01135",
+	"output":"{\"ExecutedVersion\":\"$LATEST\",\"Payload\":{\"statusCode\":200,\"body\":\"{\\\"model_used\\\": \\\"DEGRADED_SERVICE\\\", \\\"response\\\": \\\"I'm sorry, but I'm currently experiencing technical difficulties. Please try again later.\\\"}\"},\"SdkHttpMetadata\":{\"AllHttpHeaders\":{\"X-Amz-Executed-Version\":[\"$LATEST\"],\"x-amzn-Remapped-Content-Length\":[\"0\"],\"Connection\":[\"keep-alive\"],\"x-amzn-RequestId\":[\"b315ad01-8410-404a-b5b5-9708a9c1837a\"],\"Content-Length\":[\"178\"],\"Date\":[\"Sat, 17 Jan 2026 21:25:18 GMT\"],\"X-Amzn-Trace-Id\":[\"Root=1-696bfe36-7df7a1104797bbe37fd72267;Parent=5367a90b868401d9;Sampled=1;Lineage=1:47b89dd9:0\"],\"Content-Type\":[\"application/json\"]},\"HttpHeaders\":{\"Connection\":\"keep-alive\",\"Content-Length\":\"178\",\"Content-Type\":\"application/json\",\"Date\":\"Sat, 17 Jan 2026 21:25:18 GMT\",\"X-Amz-Executed-Version\":\"$LATEST\",\"x-amzn-Remapped-Content-Length\":\"0\",\"x-amzn-RequestId\":\"b315ad01-8410-404a-b5b5-9708a9c1837a\",\"X-Amzn-Trace-Id\":\"Root=1-696bfe36-7df7a1104797bbe37fd72267;Parent=5367a90b868401d9;Sampled=1;Lineage=1:47b89dd9:0\"},\"HttpStatusCode\":200},\"SdkResponseMetadata\":{\"RequestId\":\"b315ad01-8410-404a-b5b5-9708a9c1837a\"},\"StatusCode\":200}",
+	"outputDetails":{"__type":"com.amazonaws.swf.base.model#CloudWatchEventsExecutionDataDetails","included":true},
+	"startDate":1.768685110469E9,
+	"stateMachineArn":"arn:aws:states:us-east-1:339713184295:stateMachine:AIAssistantCircuitBreaker",
+	"status":"SUCCEEDED",
+	"stopDate":1.768685118627E9,
+	"traceHeader":"Root=1-696bfe36-7df7a1104797bbe37fd72267;Sampled=1"
+}
