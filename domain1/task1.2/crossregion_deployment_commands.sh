@@ -1,7 +1,7 @@
 # Assignment Part 3
 
 
-$account_id="339713184295"
+$account_id="XXXX1318XXXX"
 $region1_name="us-east-1"
 $region2_name="us-west-2"
 $stack_name="AIAssistantStack"
@@ -34,3 +34,4 @@ ApiGatewayRoleArn=arn:aws:iam::${account_id}:role/aws-apigateway-execution-role 
 Environment=prod `
 --region $region2_name `
 --capabilities CAPABILITY_IAM
+
