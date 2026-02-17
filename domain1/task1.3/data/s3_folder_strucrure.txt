@@ -1,0 +1,7 @@
+s3://aws-genai-developer-pro/domain1/task3/raw_data/
+
+reviews/         # JSON or Parquet with review_text, rating, product_id, customer_id, review_date
+surveys/         # CSV with Likert scores, free-text comments
+images/          # product images (jpg/png)
+audios/          # raw audio (wav/mp3/mp4), plus Transcribe outputs
+curated/         # ETL outputs (cleaned & joined analytics-ready data)

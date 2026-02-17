@@ -1,0 +1,101 @@
+survey_id,customer_id,product_id,survey_date,overall_satisfaction,product_rating,service_rating,comments,improvement_area
+S-10000,C-20014,P-1001,2025-02-22,5,2,1,"Service was smooth, though delivery updates were confusing.",The product packaging design could be more environmentally friendly.
+S-10001,C-20017,P-1004,2025-12-04,5,2,5,"Service was smooth, though delivery updates were confusing.",After-sales support could be more responsive and consistent.
+S-10002,C-2008,P-1000,2026-01-02,2,3,5,Pretty good overall; minor flaws but nothing serious.,More proactive communication is needed when delays occur.
+S-10003,C-20016,P-1004,2025-08-26,4,3,4,Great product and good value.,Product images should better reflect the actual item received.
+S-10004,C-2008,P-1000,2025-05-09,4,1,4,Neutral experience; works fine.,More payment options should be added for international customers.
+S-10005,C-20023,P-1004,2025-10-23,2,4,3,Product in the web and the product at hand does not match.,Warranty information should be easier to find and understand.
+S-10006,C-2007,P-1003,2025-09-02,3,2,4,Exceeded my expectations in every way.,The mobile app could be optimized to load faster on older devices.
+S-10007,C-2002,P-1001,2025-06-01,5,1,4,The item arrived sooner than expected - a pleasant surprise.,The loyalty rewards program could offer more meaningful benefits.
+S-10008,C-2001,P-1003,2025-11-18,4,3,2,Pretty good overall; minor flaws but nothing serious.,After-sales support could be more responsive and consistent.
+S-10009,C-2006,P-1001,2025-03-19,4,2,1,Great product and good value.,Email notifications should be better timed and less repetitive.
+S-10010,C-20010,P-1004,2025-06-05,4,1,3,Excellent customer support; solved my issue quickly.,Customer support should follow up after resolving reported issues.
+S-10011,C-20010,P-1000,2025-04-08,2,5,5,Average experience overall.,Customer service representatives need better product training.
+S-10012,C-20019,P-1003,2025-06-06,2,5,5,"Performs as advertised, no major complaints.",Product descriptions on the website should include more detailed specifications.
+S-10013,C-2002,P-1000,2025-09-29,5,2,2,Very satisfied with the purchase.,The mobile app could be optimized to load faster on older devices.
+S-10014,C-20016,P-1002,2026-01-16,3,5,5,Okay with the purchase; would think twice before buying again.,Product quality checks should be improved before shipping.
+S-10015,C-20011,P-1002,2025-05-22,2,5,1,Could be better; packaging was weak.,Packaging should be strengthened to better protect fragile electronic items.
+S-10016,C-20021,P-1003,2025-12-10,5,3,1,Average experience overall.,Warranty information should be easier to find and understand.
+S-10017,C-20022,P-1000,2025-10-01,1,1,3,Neutral experience; works fine.,The mobile app could be optimized to load faster on older devices.
+S-10018,C-20021,P-1003,2026-01-22,5,4,1,Poor quality and the color is different than shown.,The onboarding experience for new users could be improved.
+S-10019,C-2003,P-1001,2025-03-19,2,2,1,"Service was smooth, though delivery updates were confusing.",The product packaging design could be more environmentally friendly.
+S-10020,C-20013,P-1000,2025-09-22,1,3,3,"Performs as advertised, no major complaints.",The loyalty rewards program could offer more meaningful benefits.
+S-10021,C-2005,P-1001,2025-12-24,2,1,4,Average experience overall.,Product quality checks should be improved before shipping.
+S-10022,C-20013,P-1004,2025-10-26,3,4,3,Very satisfied with the purchase.,Live chat support availability should be extended beyond business hours.
+S-10023,C-20022,P-1002,2025-07-14,4,3,4,"Service was smooth, though delivery updates were confusing.",Customer service needs more human agents during peak hours.
+S-10024,C-20015,P-1004,2025-08-28,4,5,5,Product in the web and the product at hand does not match.,Live chat support availability should be extended beyond business hours.
+S-10025,C-20015,P-1001,2025-09-21,1,4,5,Neutral experience; works fine.,The loyalty rewards program could offer more meaningful benefits.
+S-10026,C-2009,P-1003,2025-06-11,3,4,4,"Not bad, but I expected more for the price.",Customer feedback should be acknowledged more promptly.
+S-10027,C-2002,P-1000,2025-02-13,2,4,4,"Service was smooth, though delivery updates were confusing.",Email notifications should be better timed and less repetitive.
+S-10028,C-20022,P-1000,2025-03-26,1,3,5,"So far, I am okay with the service. Could do more to get better.Quality is decent, but shipping took too long.",Packaging should be strengthened to better protect fragile electronic items.
+S-10029,C-20020,P-1001,2025-02-28,1,1,2,Very satisfied with the purchase.,The online chatbot can be improved further to provide more accurate responses.
+S-10030,C-20011,P-1001,2025-03-07,2,4,5,Very satisfied with the purchase.,The website search functionality should return more relevant results.
+S-10031,C-20018,P-1002,2025-08-11,4,3,2,Pretty good overall; minor flaws but nothing serious.,Return and refund processes should be made simpler and faster.
+S-10032,C-20022,P-1003,2025-04-17,3,1,5,Product in the web and the product at hand does not match.,Customer support should follow up after resolving reported issues.
+S-10033,C-2005,P-1001,2025-10-03,3,5,2,Average experience overall.,The onboarding experience for new users could be improved.
+S-10034,C-20011,P-1001,2025-09-01,4,1,4,There is always a hidden fee.,Live chat support availability should be extended beyond business hours.
+S-10035,C-2003,P-1004,2025-07-01,1,1,1,There is always a hidden fee.,Customer service needs more human agents during peak hours.
+S-10036,C-2001,P-1004,2025-04-02,2,1,5,Very satisfied with the purchase.,The product packaging design could be more environmentally friendly.
+S-10037,C-20021,P-1000,2025-06-29,5,1,3,Exceeded my expectations in every way.,The online chatbot can be improved further to provide more accurate responses.
+S-10038,C-20012,P-1001,2025-05-23,3,4,2,Exceeded my expectations in every way.,Customer service needs more human agents during peak hours.
+S-10039,C-2002,P-1000,2025-07-04,1,2,3,"Feels cheaper than advertised, bought only yesterday and already malfunctioning.",Product quality checks should be improved before shipping.
+S-10040,C-2000,P-1003,2025-06-27,4,3,3,The item arrived sooner than expected - a pleasant surprise.,Customer service representatives need better product training.
+S-10041,C-20024,P-1001,2025-03-04,3,5,3,The item arrived sooner than expected - a pleasant surprise.,The product packaging design could be more environmentally friendly.
+S-10042,C-20022,P-1004,2026-01-08,5,3,3,Pretty good overall; minor flaws but nothing serious.,Packaging should be strengthened to better protect fragile electronic items.
+S-10043,C-2001,P-1003,2025-02-20,3,2,3,There is always a hidden fee.,The mobile app could be optimized to load faster on older devices.
+S-10044,C-2003,P-1000,2025-02-04,4,5,5,Very satisfied with the purchase.,Instructions included with the product should be clearer and more detailed.
+S-10045,C-20012,P-1004,2025-09-24,4,1,2,Average experience overall.,Customer service representatives need better product training.
+S-10046,C-20020,P-1000,2025-04-16,4,4,1,Excellent customer support; solved my issue quickly.,Product quality checks should be improved before shipping.
+S-10047,C-20012,P-1001,2025-03-15,1,4,2,"The product works, but the instructions were unclear.",Email notifications should be better timed and less repetitive.
+S-10048,C-2001,P-1002,2025-10-27,5,1,3,"The product works, but the instructions were unclear.",Return and refund processes should be made simpler and faster.
+S-10049,C-2005,P-1001,2025-09-07,1,5,1,"Service was smooth, though delivery updates were confusing.",Customer support should follow up after resolving reported issues.
+S-10050,C-2002,P-1002,2025-03-01,1,1,1,Pretty good overall; minor flaws but nothing serious.,Packaging should be strengthened to better protect fragile electronic items.
+S-10051,C-20015,P-1001,2025-09-13,3,1,3,Excellent customer support; solved my issue quickly.,Email notifications should be better timed and less repetitive.
+S-10052,C-20016,P-1001,2025-03-25,5,3,1,Pretty good overall; minor flaws but nothing serious.,The website search functionality should return more relevant results.
+S-10053,C-20014,P-1002,2025-06-23,3,3,5,Excellent customer support; solved my issue quickly.,Product images should better reflect the actual item received.
+S-10054,C-2001,P-1000,2025-09-07,1,4,3,Excellent customer support; solved my issue quickly.,Product quality checks should be improved before shipping.
+S-10055,C-20019,P-1001,2025-04-13,2,5,4,Excellent customer support; solved my issue quickly.,Email notifications should be better timed and less repetitive.
+S-10056,C-2008,P-1001,2025-02-01,3,1,1,Very satisfied with the purchase.,Customer support should follow up after resolving reported issues.
+S-10057,C-2004,P-1000,2025-07-04,2,2,4,Poor quality and the color is different than shown.,Customer service needs more human agents during peak hours.
+S-10058,C-2002,P-1003,2025-01-12,5,2,3,"Service was smooth, though delivery updates were confusing.",More payment options should be added for international customers.
+S-10059,C-20010,P-1000,2025-08-27,1,5,2,Poor quality and the color is different than shown.,Delivery time estimates should be more accurate and reliable.
+S-10060,C-20012,P-1004,2025-10-26,4,3,5,"Performs as advertised, no major complaints.",Product images should better reflect the actual item received.
+S-10061,C-2004,P-1000,2025-09-28,1,2,3,There is always a hidden fee.,Delivery time estimates should be more accurate and reliable.
+S-10062,C-20023,P-1001,2025-02-20,3,5,5,The item arrived sooner than expected - a pleasant surprise.,Delivery time estimates should be more accurate and reliable.
+S-10063,C-20024,P-1000,2025-07-19,4,1,2,Product in the web and the product at hand does not match.,The checkout process could be streamlined to reduce abandoned carts.
+S-10064,C-20018,P-1004,2025-05-28,3,2,5,Average experience overall.,Customer service representatives need better product training.
+S-10065,C-2007,P-1002,2025-02-20,5,1,5,"Not bad, but I expected more for the price.",Customer support should follow up after resolving reported issues.
+S-10066,C-20017,P-1000,2025-07-27,3,1,4,"Service was smooth, though delivery updates were confusing.",Warranty information should be easier to find and understand.
+S-10067,C-20012,P-1004,2025-11-11,4,4,3,Excellent customer support; solved my issue quickly.,Customer support should follow up after resolving reported issues.
+S-10068,C-20016,P-1004,2025-06-13,5,2,4,Exceeded my expectations in every way.,Order tracking updates should be more frequent and transparent.
+S-10069,C-20013,P-1002,2025-12-10,3,4,4,The item arrived sooner than expected - a pleasant surprise.,The product packaging design could be more environmentally friendly.
+S-10070,C-20023,P-1002,2025-05-05,4,1,3,There is always a hidden fee.,Packaging should be strengthened to better protect fragile electronic items.
+S-10071,C-20015,P-1004,2025-07-04,4,2,3,"Feels cheaper than advertised, bought only yesterday and already malfunctioning.",Instructions included with the product should be clearer and more detailed.
+S-10072,C-20011,P-1003,2025-04-06,2,2,5,"The product works, but the instructions were unclear.",Delivery time estimates should be more accurate and reliable.
+S-10073,C-2001,P-1004,2025-02-04,3,2,3,Excellent customer support; solved my issue quickly.,Customer service needs more human agents during peak hours.
+S-10074,C-2009,P-1000,2025-12-20,5,1,5,There is always a hidden fee.,The checkout process could be streamlined to reduce abandoned carts.
+S-10075,C-2005,P-1002,2026-01-14,5,1,4,Poor quality and the color is different than shown.,After-sales support could be more responsive and consistent.
+S-10076,C-2004,P-1001,2025-02-06,2,1,4,The item arrived sooner than expected - a pleasant surprise.,Product descriptions on the website should include more detailed specifications.
+S-10077,C-2008,P-1002,2025-01-14,4,5,5,Neutral experience; works fine.,Live chat support availability should be extended beyond business hours.
+S-10078,C-20014,P-1002,2025-10-23,1,4,1,Poor quality and the color is different than shown.,Product quality checks should be improved before shipping.
+S-10079,C-20022,P-1001,2025-12-22,1,1,1,"So far, I am okay with the service. Could do more to get better.Quality is decent, but shipping took too long.",Customer service needs more human agents during peak hours.
+S-10080,C-2006,P-1000,2025-01-10,1,1,4,Excellent customer support; solved my issue quickly.,Order tracking updates should be more frequent and transparent.
+S-10081,C-20014,P-1002,2025-02-13,5,5,4,The item arrived sooner than expected - a pleasant surprise.,Delivery time estimates should be more accurate and reliable.
+S-10082,C-2007,P-1000,2025-08-15,1,2,5,"So far, I am okay with the service. Could do more to get better.Quality is decent, but shipping took too long.",Order tracking updates should be more frequent and transparent.
+S-10083,C-20013,P-1001,2025-07-14,2,5,4,Exceeded my expectations in every way.,Customer service representatives need better product training.
+S-10084,C-20024,P-1001,2025-11-24,1,2,2,There is always a hidden fee.,The loyalty rewards program could offer more meaningful benefits.
+S-10085,C-2007,P-1001,2025-06-30,5,4,1,Neutral experience; works fine.,The website search functionality should return more relevant results.
+S-10086,C-2000,P-1001,2025-03-23,4,5,2,Okay with the purchase; would think twice before buying again.,The product packaging design could be more environmentally friendly.
+S-10087,C-2009,P-1003,2025-06-17,4,5,1,Very satisfied with the purchase.,Product descriptions on the website should include more detailed specifications.
+S-10088,C-2003,P-1003,2025-07-01,5,5,1,"Feels cheaper than advertised, bought only yesterday and already malfunctioning.",The loyalty rewards program could offer more meaningful benefits.
+S-10089,C-2009,P-1000,2025-02-09,1,5,4,The item arrived sooner than expected - a pleasant surprise.,More proactive communication is needed when delays occur.
+S-10090,C-20012,P-1001,2025-08-08,2,1,1,Average experience overall.,Warranty information should be easier to find and understand.
+S-10091,C-20017,P-1003,2025-05-07,4,3,2,Could be better; packaging was weak.,More proactive communication is needed when delays occur.
+S-10092,C-2005,P-1000,2025-09-17,5,1,5,Neutral experience; works fine.,Email notifications should be better timed and less repetitive.
+S-10093,C-20013,P-1002,2025-01-11,4,3,2,"Performs as advertised, no major complaints.",Instructions included with the product should be clearer and more detailed.
+S-10094,C-20020,P-1002,2025-04-09,1,4,4,Very satisfied with the purchase.,The product packaging design could be more environmentally friendly.
+S-10095,C-20010,P-1004,2025-04-26,2,2,4,Very satisfied with the purchase.,Order tracking updates should be more frequent and transparent.
+S-10096,C-2000,P-1001,2026-01-27,3,1,1,Very satisfied with the purchase.,More payment options should be added for international customers.
+S-10097,C-20017,P-1002,2025-08-09,4,5,5,"Feels cheaper than advertised, bought only yesterday and already malfunctioning.",Delivery time estimates should be more accurate and reliable.
+S-10098,C-20024,P-1004,2026-01-06,4,1,1,Okay with the purchase; would think twice before buying again.,More payment options should be added for international customers.
+S-10099,C-20015,P-1004,2025-08-06,3,5,1,Neutral experience; works fine.,Product images should better reflect the actual item received.
