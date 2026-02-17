@@ -7,7 +7,7 @@ import datetime
 
 # Configuration parameters 
 NUM_ROWS = 100
-OUTPUT_FILE = "surveys.csv"
+OUTPUT_FILE = "product_surveys.csv"
 
 CUSTOMERS = ["C-200"+str(x) for x in range(25)] #["C-2001","C-2002","C-2003","C-2004","C-2005"]
 PRODUCTS  = ["P-100"+str(x) for x in range(5)]  #["P-1001","P-1002","P-1003","P-1004", ]
@@ -94,3 +94,4 @@ with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
         w.writerow(row)
 
 print(f"Created {OUTPUT_FILE} with {NUM_ROWS} rows.")
+
