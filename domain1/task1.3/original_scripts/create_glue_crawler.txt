@@ -1,0 +1,30 @@
+# Assignment Part 1
+# Step 1: Set Up AWS Glue Data Catalog and Data Quality
+
+
+# Create an S3 bucket for the project data:
+aws s3 mb s3://customer-feedback-analysis-<your-initials>
+
+
+# Upload the sample data files to the S3 bucket:
+aws s3 cp sample-data/ s3://customer-feedback-analysis-<your-initials>/raw-data/ --recursive
+
+
+# Create an AWS Glue Crawler to catalog the data:
+aws glue create-crawler \
+  --name customer-feedback-crawler \
+  --role AWSGlueServiceRole-CustomerFeedback \
+  --database-name customer_feedback_db \
+  --targets '{"S3Targets": [{"Path": "s3://customer-feedback-analysis-<your-initials>/raw-data/"}]}'
+
+
+# Run the crawler:
+aws glue start-crawler --name customer-feedback-crawler
+
+
+# Set up an S3 trigger for the Lambda function:
+aws lambda create-event-source-mapping \
+--function-name TextValidationFunction \
+--batch-size 1 \
+--event-source-arn arn:aws:s3:::customer-feedback-analysis-<your-initials> \
+--events s3:ObjectCreated:*
